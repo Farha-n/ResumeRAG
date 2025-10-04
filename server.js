@@ -30,7 +30,7 @@ const limiter = rateLimit({
 app.use('/api', limiter);
 
 // Serve static files from React build
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'src/client/build')));
 
 // Import routes
 const authRoutes = require('./routes/auth');
@@ -94,7 +94,7 @@ app.get('/.well-known/hackathon.json', (req, res) => {
 
 // Catch all handler: send back React's index.html file for client-side routing
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'src/client/build', 'index.html'));
 });
 
 // Error handling middleware

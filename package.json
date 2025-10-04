@@ -9,7 +9,8 @@
     "build": "npm run build:client",
     "build:client": "cd client && npm run build",
     "postinstall": "cd client && npm install",
-    "vercel-build": "npm run build:client"
+    "vercel-build": "npm run build:client",
+    "deploy": "npm run build && npm start"
   },
   "dependencies": {
     "express": "^4.18.2",
